@@ -525,6 +525,7 @@ const Services = ()=>{
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "services",
         className: "w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16",
@@ -797,6 +798,7 @@ const Processes = ()=>{
         }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "process",
         className: "w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16",
@@ -1137,6 +1139,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$imag
 const Contact = ()=>{
     const mailIcon = '/icons/mail-icon.png';
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+        id: "contact",
         className: "w-full bg-[#1316b8] py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
             className: "max-w-[1728px] mx-auto flex flex-col gap-12 md:gap-16 lg:gap-20",
@@ -1354,7 +1357,7 @@ const Contact = ()=>{
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         type: "text",
-                                                        placeholder: "John",
+                                                        placeholder: "Enter your first name",
                                                         className: "w-full h-[63px] border border-[#EEEEEE] rounded-[11px] px-4 font-lato font-normal text-base md:text-lg text-[rgba(0,0,0,0.25)] focus:outline-none focus:border-[#130f78]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.tsx",
@@ -1380,7 +1383,7 @@ const Contact = ()=>{
                                                     }, ("TURBOPACK compile-time value", void 0)),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                         type: "text",
-                                                        placeholder: "London",
+                                                        placeholder: "Enter your last name",
                                                         className: "w-full h-[63px] border border-[#EEEEEE] rounded-[11px] px-4 font-lato font-normal text-base md:text-lg text-[rgba(0,0,0,0.25)] focus:outline-none focus:border-[#130f78]"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Contact.tsx",
@@ -1412,7 +1415,7 @@ const Contact = ()=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                 type: "email",
-                                                placeholder: "John",
+                                                placeholder: "Enter your email address",
                                                 className: "w-full h-[63px] border border-[#EEEEEE] rounded-[11px] px-4 font-lato font-normal text-base md:text-lg text-[rgba(0,0,0,0.25)] focus:outline-none focus:border-[#130f78]"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.tsx",
@@ -1438,7 +1441,7 @@ const Contact = ()=>{
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                 type: "text",
-                                                placeholder: "John",
+                                                placeholder: "Enter your company name",
                                                 className: "w-full h-[63px] border border-[#EEEEEE] rounded-[11px] px-4 font-lato font-normal text-base md:text-lg text-[rgba(0,0,0,0.25)] focus:outline-none focus:border-[#130f78]"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Contact.tsx",
@@ -1480,7 +1483,7 @@ const Contact = ()=>{
                                                 columnNumber: 17
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
-                                                placeholder: "John",
+                                                placeholder: "Describe your project requirements...",
                                                 rows: 5,
                                                 className: "w-full h-[149px] border border-[#EEEEEE] rounded-[11px] px-4 py-3 font-lato font-normal text-base md:text-lg text-[rgba(0,0,0,0.25)] focus:outline-none focus:border-[#130f78] resize-none"
                                             }, void 0, false, {
@@ -1555,7 +1558,7 @@ const Footer = ()=>{
     const companyLinks = [
         'About Us',
         'Our Process',
-        'Porfolio',
+        'Portfolio',
         'Contact'
     ];
     const linkedinIcon = '/icons/linkedin-icon.png';
