@@ -1,20 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-<<<<<<< HEAD
-import AboutHero from '@/components/AboutHero';
-
-export default function AboutUsPage() {
-  return (
-    <>
-      <Header hideGetStarted={true} />
-      <main>
-        <AboutHero />
-=======
 import Image from 'next/image';
 
 export default function AboutUsPage() {
   const meetingImage = '/images/about-meeting.jpg';
-  
+
   const innovationIconBg = '/icons/innovation-icon-bg.svg';
   const innovationIcon = '/icons/innovation-icon.svg';
   const collaborationIconBg = '/icons/collaboration-icon-bg.svg';
@@ -29,7 +19,7 @@ export default function AboutUsPage() {
       description: 'Turning bold ideas into real-world solutions.',
       iconBg: innovationIconBg,
       icon: innovationIcon,
-      iconType: 'single'
+      iconType: 'single',
     },
     {
       title: 'Collaboration',
@@ -37,25 +27,25 @@ export default function AboutUsPage() {
       iconBg: collaborationIconBg,
       icon1: collaborationIcon1,
       icon2: collaborationIcon2,
-      iconType: 'double'
+      iconType: 'double',
     },
     {
       title: 'Excellence',
       description: 'Delivering top-notch solutions with precision.',
       icon: excellenceIcon,
-      iconType: 'single'
+      iconType: 'single',
     },
     {
       title: 'Integrity',
       description: 'Building trust through transparency.',
       icon: integrityIcon,
-      iconType: 'single'
-    }
+      iconType: 'single',
+    },
   ];
 
   return (
     <>
-      <Header />
+      <Header hideGetStarted />
       <main>
         <section className="bg-[rgba(245,245,245,0.42)] w-full py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 relative">
           <div className="max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16">
@@ -70,14 +60,20 @@ export default function AboutUsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
               <div className="font-lato font-normal text-base md:text-lg lg:text-[24px] leading-[2.17] text-[rgba(0,0,0,0.75)]">
-                <p className="m-0 mb-4">Our name reflects our process: just like a sculptor shapes raw material into art, we shape raw ideas into robust digital products. With a focus on quality, innovation, and scalability, we help organizations stay ahead in today's fast-changing digital world.</p>
-                <p className="m-0 mb-4">Founded with a vision to bridge the gap between innovative ideas and practical solutions, Dev Sculpt Studio has been at the forefront of digital transformation. We combine technical expertise with creative problem-solving to deliver solutions that not only meet but exceed our clients' expectations.</p>
-                <p className="m-0">Our team of experienced developers, designers, and strategists work collaboratively to ensure every project is executed with precision and care. We believe in building long-term partnerships with our clients, understanding their unique needs, and delivering solutions that drive real business value.</p>
+                <p className="m-0 mb-4">
+                  Our name reflects our process: just like a sculptor shapes raw material into art, we shape raw ideas into robust digital products. With a focus on quality, innovation, and scalability, we help organizations stay ahead in today's fast-changing digital world.
+                </p>
+                <p className="m-0 mb-4">
+                  Founded with a vision to bridge the gap between innovative ideas and practical solutions, Dev Sculpt Studio has been at the forefront of digital transformation. We combine technical expertise with creative problem-solving to deliver solutions that not only meet but exceed our clients' expectations.
+                </p>
+                <p className="m-0">
+                  Our team of experienced developers, designers, and strategists work collaboratively to ensure every project is executed with precision and care. We believe in building long-term partnerships with our clients, understanding their unique needs, and delivering solutions that drive real business value.
+                </p>
               </div>
               <div className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] rounded-[11px] overflow-hidden relative">
-                <Image 
-                  src={meetingImage} 
-                  alt="Team meeting at Dev Sculpt Studio" 
+                <Image
+                  src={meetingImage}
+                  alt="Team meeting at Dev Sculpt Studio"
                   fill
                   className="object-cover object-center rounded-[11px]"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -90,9 +86,9 @@ export default function AboutUsPage() {
                 Our Core Values
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 w-full max-w-[1400px]">
-                {coreValues.map((value, index) => (
-                  <div 
-                    key={index} 
+                {coreValues.map((value) => (
+                  <div
+                    key={value.title}
                     className="bg-white rounded-[11px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.02)] p-5 md:p-6 lg:p-8 flex flex-col items-center text-center min-h-[160px] sm:min-h-[180px] md:min-h-[200px] lg:min-h-[222px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_8px_16px_0px_rgba(0,0,0,0.1)]"
                   >
                     <div className="flex flex-col items-center gap-4 w-full">
@@ -107,10 +103,6 @@ export default function AboutUsPage() {
                               {value.icon2 && <Image src={value.icon2} alt="" width={24} height={24} className="object-contain" />}
                             </div>
                           </>
-                        ) : value.title === 'Excellence' || value.title === 'Integrity' ? (
-                          <div className="relative w-full h-full flex items-center justify-center">
-                            {value.icon && <Image src={value.icon} alt="" width={48} height={48} className="object-contain" />}
-                          </div>
                         ) : value.iconBg ? (
                           <>
                             <div className="absolute inset-0 w-full h-full">
@@ -120,10 +112,16 @@ export default function AboutUsPage() {
                               {value.icon && <Image src={value.icon} alt="" width={24} height={24} className="object-contain" />}
                             </div>
                           </>
+                        ) : value.icon ? (
+                          <div className="relative w-full h-full flex items-center justify-center">
+                            <Image src={value.icon} alt="" width={48} height={48} className="object-contain" />
+                          </div>
                         ) : null}
                       </div>
                       <h3 className="font-lato font-bold text-lg sm:text-xl md:text-2xl lg:text-[24px] leading-[2.17] text-black m-0">{value.title}</h3>
-                      <p className="font-lato font-normal text-sm sm:text-base md:text-lg lg:text-[18px] leading-[1.83] text-[rgba(0,0,0,0.75)] m-0 text-center">{value.description}</p>
+                      <p className="font-lato font-normal text-sm sm:text-base md:text-lg lg:text-[18px] leading-[1.83] text-[rgba(0,0,0,0.75)] m-0 text-center">
+                        {value.description}
+                      </p>
                     </div>
                   </div>
                 ))}
@@ -142,14 +140,8 @@ export default function AboutUsPage() {
             </div>
           </div>
         </section>
->>>>>>> 41df19c (Remove IMAGE_MIGRATION_GUIDE.md and several unused assets; update README for project clarity. Add new routes and improve component structure with IDs for better accessibility. Fix typos in Footer and Contact components, and enhance CSS styles for responsiveness.)
       </main>
       <Footer />
     </>
   );
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 41df19c (Remove IMAGE_MIGRATION_GUIDE.md and several unused assets; update README for project clarity. Add new routes and improve component structure with IDs for better accessibility. Fix typos in Footer and Contact components, and enhance CSS styles for responsiveness.)

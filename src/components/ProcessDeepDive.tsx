@@ -102,7 +102,7 @@ const ProcessDeepDive = () => {
         </div>
 
         <div className="flex flex-col gap-10 md:gap-12">
-          {deepDivePhases.map((phase, index) => (
+          {deepDivePhases.map((phase) => (
             <div
               key={phase.number}
               className={`flex flex-col gap-6 lg:gap-10 ${

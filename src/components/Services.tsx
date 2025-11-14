@@ -39,14 +39,11 @@ const Services = () => {
   ];
 
   return (
-<<<<<<< HEAD
-    <section 
+    <section
+      id="services"
       ref={servicesSection.ref}
       className={`w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 scroll-animate ${servicesSection.isVisible ? 'visible' : ''}`}
     >
-=======
-    <section id="services" className="w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
->>>>>>> 41df19c (Remove IMAGE_MIGRATION_GUIDE.md and several unused assets; update README for project clarity. Add new routes and improve component structure with IDs for better accessibility. Fix typos in Footer and Contact components, and enhance CSS styles for responsiveness.)
       <div className="max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16">
         <div className="text-center">
           <h2 className="font-lato font-bold text-4xl md:text-5xl lg:text-[65px] leading-tight text-[#1316b8] m-0">
