@@ -54,3 +54,6 @@ The hero section is fully responsive with these breakpoints:
 - **Desktop**: 1024px - 1280px
 - **Large Desktop**: > 1280px
 
+
+
+

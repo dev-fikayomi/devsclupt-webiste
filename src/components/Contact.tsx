@@ -1,10 +1,18 @@
+'use client';
+
 import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Contact = () => {
+  const contactSection = useScrollAnimation();
   const mailIcon = '/icons/mail-icon.png';
 
   return (
-    <section id="contact" className="w-full bg-[#1316b8] py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
+    <section 
+      id="contact"
+      ref={contactSection.ref}
+      className={`w-full bg-[#1316b8] py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 scroll-animate ${contactSection.isVisible ? 'visible' : ''}`}
+    >
       <div className="max-w-[1728px] mx-auto flex flex-col gap-12 md:gap-16 lg:gap-20">
         <div className="text-center">
           <h2 className="font-lato font-bold text-4xl md:text-5xl lg:text-[65px] leading-tight text-white m-0">

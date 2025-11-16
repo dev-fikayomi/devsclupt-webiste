@@ -1,6 +1,10 @@
+'use client';
+
 import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const Services = () => {
+  const servicesSection = useScrollAnimation();
   const services = [
     {
       title: 'Custom Software Development',
@@ -35,7 +39,10 @@ const Services = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
+    <section 
+      ref={servicesSection.ref}
+      className={`w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8 scroll-animate ${servicesSection.isVisible ? 'visible' : ''}`}
+    >
       <div className="max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16">
         <div className="text-center">
           <h2 className="font-lato font-bold text-4xl md:text-5xl lg:text-[65px] leading-tight text-[#1316b8] m-0">
@@ -51,7 +58,7 @@ const Services = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="bg-[rgba(238,238,238,0.25)] rounded-[11px] p-6 md:p-8 flex flex-col gap-4 min-h-[231px]"
+              className="bg-[rgba(238,238,238,0.25)] rounded-[11px] p-6 md:p-8 flex flex-col gap-4 min-h-[231px] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] cursor-pointer"
             >
               <div className="w-[60px] h-[60px] flex items-center justify-center flex-shrink-0">
                 <Image src={service.icon} alt="" width={48} height={48} className="object-contain" />
