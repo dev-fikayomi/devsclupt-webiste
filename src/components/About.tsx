@@ -1,6 +1,10 @@
+'use client';
+
 import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 const About = () => {
+  const aboutSection = useScrollAnimation();
   const meetingImage = '/images/about-meeting.jpg';
   
   const innovationIconBg = '/icons/innovation-icon-bg.svg';
@@ -42,7 +46,10 @@ const About = () => {
   ];
 
   return (
-    <section className="bg-[rgba(245,245,245,0.42)] w-full py-8 md:py-12 lg:py-16 px-4 md:px-6 lg:px-8 relative">
+    <section 
+      ref={aboutSection.ref}
+      className={`bg-[rgba(245,245,245,0.42)] w-full py-8 md:py-12 lg:py-16 px-4 md:px-6 lg:px-8 relative scroll-animate ${aboutSection.isVisible ? 'visible' : ''}`}
+    >
       <div className="max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16">
         <div className="text-center flex flex-col gap-4 md:gap-6">
           <h2 className="font-lato font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[65px] leading-tight text-[#130f78] m-0 text-center">
