@@ -17,7 +17,7 @@ const Header = ({ hideGetStarted = false }: HeaderProps) => {
     { name: 'About Us', path: '/about-us' },
     { name: 'Services', path: '/services' },
     { name: 'Process', path: '/process' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Contact', path: '/#contact' },
   ];
 
   return (
@@ -99,25 +99,26 @@ const Header = ({ hideGetStarted = false }: HeaderProps) => {
       </div>
 
       <div 
-        className={`sm:hidden w-full bg-white border-t-[0.2px] border-[#130f78] shadow-lg overflow-hidden transition-all duration-300 ease-in-out ${
+        className={`sm:hidden w-full bg-white border-t-[0.2px] border-[#130f78] shadow-lg overflow-hidden transition-[max-height,opacity] duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] ${
           isMobileMenuOpen 
-            ? 'max-h-[600px] opacity-100' 
-            : 'max-h-0 opacity-0'
+            ? 'max-h-[600px] opacity-100 pointer-events-auto' 
+            : 'max-h-0 opacity-0 pointer-events-none'
         }`}
       >
         <nav className="flex flex-col px-4 gap-3 py-4">
-          {navLinks.map((link) => {
+          {navLinks.map((link, index) => {
             const isActive = pathname === link.path || (link.path === '/about-us' && pathname?.startsWith('/about-us')) || (link.path === '/services' && pathname?.startsWith('/services')) || (link.path === '/process' && pathname?.startsWith('/process'));
             if (link.path.startsWith('/#')) {
               return (
                 <a
                   key={link.name}
                   href={link.path}
-                  className={`text-base font-medium font-lato transition-all duration-200 py-3 border-b border-[#f0f0f0] last:border-b-0 hover:pl-2 hover:bg-[#f8f8f8] ${
+                  className={`text-base font-medium font-lato transition-all duration-300 ease-out py-3 border-b border-[#f0f0f0] last:border-b-0 hover:pl-2 hover:bg-[#f8f8f8] ${
                     isActive 
                       ? 'text-[#130f78] font-semibold bg-[#f0f0f8]' 
                       : 'text-black hover:text-[#130f78]'
-                  }`}
+                  } ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+                  style={{ transitionDelay: `${index * 60}ms` }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -128,11 +129,12 @@ const Header = ({ hideGetStarted = false }: HeaderProps) => {
               <Link
                 key={link.name}
                 href={link.path}
-                className={`text-base font-medium font-lato transition-all duration-200 py-3 border-b border-[#f0f0f0] last:border-b-0 hover:pl-2 hover:bg-[#f8f8f8] ${
+                className={`text-base font-medium font-lato transition-all duration-300 ease-out py-3 border-b border-[#f0f0f0] last:border-b-0 hover:pl-2 hover:bg-[#f8f8f8] ${
                   isActive 
                     ? 'text-[#130f78] font-semibold bg-[#f0f0f8]' 
                     : 'text-black hover:text-[#130f78]'
-                }`}
+                } ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+                style={{ transitionDelay: `${index * 60}ms` }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -142,7 +144,8 @@ const Header = ({ hideGetStarted = false }: HeaderProps) => {
           {!hideGetStarted && (
             <button 
               type="button"
-              className="bg-[#daff35] text-[#130f78] border-none rounded-[4px] px-5 py-3 text-lg font-bold font-lato cursor-pointer transition-all duration-200 mt-2 hover:bg-[#c4ef00] hover:shadow-md active:scale-95"
+              className={`bg-[#daff35] text-[#130f78] border-none rounded-[4px] px-5 py-3 text-lg font-bold font-lato cursor-pointer transition-all duration-300 ease-out mt-2 hover:bg-[#c4ef00] hover:shadow-md active:scale-95 ${isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}
+              style={{ transitionDelay: `${navLinks.length * 60}ms` }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Get Started

@@ -6,11 +6,10 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 const CoreServices = () => {
   const coreServicesSection = useScrollAnimation();
 
-  // Icon images from Figma localhost server
-  const customIcon = 'http://localhost:3845/assets/4618ed95baf4f9b8020523958be4ff13f27aff2d.svg';
-  const mobileIcon = 'http://localhost:3845/assets/a3c3eb6268731067efc76f00892a60011c1ad7f3.svg';
-  const webIcon = 'http://localhost:3845/assets/c374edfb9fae3a1cb8101cfdefc8ba39fcdb46a7.svg';
-  const cloudIcon = 'http://localhost:3845/assets/272c901885dd575548b9ba59491e9afe94e2611a.svg';
+  const customIcon = '/icons/custom-icon.png';
+  const mobileIcon = '/icons/mobile-dev-icon.png';
+  const webIcon = '/icons/web-dev-icon.png';
+  const cloudIcon = '/icons/cloud-icon.png';
 
   const coreServices = [
     {
@@ -23,7 +22,6 @@ const CoreServices = () => {
         'Microservices Architecture'
       ],
       icon: customIcon,
-      iconBg: 'bg-[rgba(9,164,51,0.15)]',
       cardBg: 'bg-[rgba(9,164,51,0.05)]'
     },
     {
@@ -36,7 +34,6 @@ const CoreServices = () => {
         'Mobile UI/UX Design'
       ],
       icon: mobileIcon,
-      iconBg: 'bg-[rgba(19,22,184,0.1)]',
       cardBg: 'bg-[rgba(19,22,184,0.1)]'
     },
     {
@@ -49,7 +46,6 @@ const CoreServices = () => {
         'Single Page Applications'
       ],
       icon: webIcon,
-      iconBg: 'bg-[rgba(255,154,12,0.1)]',
       cardBg: 'bg-[rgba(255,154,12,0.15)]'
     },
     {
@@ -62,7 +58,6 @@ const CoreServices = () => {
         'Infrastructure as Code'
       ],
       icon: cloudIcon,
-      iconBg: 'bg-[rgba(222,46,46,0.15)]',
       cardBg: 'bg-[rgba(222,46,46,0.15)]'
     }
   ];
@@ -88,16 +83,14 @@ const CoreServices = () => {
               key={index}
               className={`${service.cardBg} rounded-[11px] p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col gap-3 md:gap-4 min-h-[280px] sm:min-h-[320px] transition-all duration-300 ease-out hover:scale-105 hover:-translate-y-2 hover:shadow-[0px_8px_24px_0px_rgba(0,0,0,0.15)] cursor-pointer`}
             >
-              <div className={`w-[50px] h-[50px] ${service.iconBg} rounded-[4px] flex items-center justify-center flex-shrink-0`}>
-                <div className="w-5 h-5 relative">
-                  <Image 
-                    src={service.icon} 
-                    alt="" 
-                    fill
-                    className="object-contain"
-                    sizes="20px"
-                  />
-                </div>
+              <div className="w-14 h-14 relative flex-shrink-0">
+                <Image 
+                  src={service.icon} 
+                  alt="" 
+                  fill
+                  className="object-contain"
+                  sizes="56px"
+                />
               </div>
 
               <h3 className="font-lato font-semibold text-base sm:text-lg md:text-xl lg:text-[22px] leading-[26px] sm:leading-[30px] text-black m-0">

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import dataSculptLogo from '../../assets/dev-sculpt.svg';
 
 const Footer = () => {
   const services = [
@@ -25,11 +26,7 @@ const Footer = () => {
       <div className="max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           <div className="flex flex-col gap-6">
-            <div className="w-[60px] h-[60px] bg-[#130f78] rounded-[4px] flex items-center justify-center">
-              <span className="text-white text-[20px] font-bold font-lato">
-                DS
-              </span>
-            </div>
+            <Image src={dataSculptLogo} alt="Data Sculpt" width={72} height={72} className="w-[72px] h-[72px] object-contain" />
 
             <p className="font-lato font-bold text-base md:text-lg lg:text-[18px] leading-[1.67] text-white m-0">
               Shaping digital ideas into scalable solutions. We craft innovative software that empowers businesses to thrive in the digital age.
