@@ -12,11 +12,14 @@ dist
 dist-ssr
 *.local
 
+<<<<<<< HEAD
 # Next.js
 .next/
 out/
 next-env.d.ts
 
+=======
+>>>>>>> 014ac64 (Update project configuration and assets; modified .gitignore, ESLint, and TypeScript configurations. Added new images and updated existing assets. Enhanced README and migration guide for clarity. Adjusted Next.js and Tailwind CSS configurations for improved performance.)
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
