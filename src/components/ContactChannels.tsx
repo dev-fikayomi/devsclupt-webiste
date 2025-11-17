@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import emailIcon from '../../assets/email.svg';
 import callIcon from '../../assets/call-us.svg';
 import visitIcon from '../../assets/visit-us.svg';
@@ -33,9 +34,15 @@ const contactOptions = [
   },
 ];
 
-const ContactChannels = () => (
-  <section className="w-full bg-[#f5f5f8]">
-    <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 lg:py-24 flex flex-col items-center text-center gap-6">
+const ContactChannels = () => {
+  const channelsSection = useScrollAnimation();
+
+  return (
+    <section
+      ref={channelsSection.ref}
+      className={`w-full bg-[#f5f5f8] scroll-animate ${channelsSection.isVisible ? 'visible' : ''}`}
+    >
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-16 sm:py-20 lg:py-24 flex flex-col items-center text-center gap-6">
       <div className="space-y-4">
         <h2 className="font-lato font-bold text-3xl sm:text-4xl lg:text-[48px] text-black m-0">Connect with Us</h2>
         <p className="font-lato text-base sm:text-lg lg:text-xl text-[rgba(0,0,0,0.75)] m-0">
@@ -43,34 +50,35 @@ const ContactChannels = () => (
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
-        {contactOptions.map((option) => (
-          <div
-            key={option.title}
-            className="bg-white shadow-[0px_4px_14px_rgba(0,0,0,0.06)] px-6 py-8 flex flex-col items-center text-center gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0px_12px_24px_rgba(0,0,0,0.08)]"
-          >
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
+          {contactOptions.map((option) => (
             <div
-              className="w-[64px] h-[64px] rounded-full flex items-center justify-center"
-              style={{ backgroundColor: option.tint }}
+              key={option.title}
+              className="bg-white shadow-[0px_4px_14px_rgba(0,0,0,0.06)] px-6 py-8 flex flex-col items-center text-center gap-4 transition-transform duration-200 hover:-translate-y-1 hover:shadow-[0px_12px_24px_rgba(0,0,0,0.08)]"
             >
-              <Image src={option.icon} alt={`${option.title} icon`} width={28} height={28} />
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-lato font-bold text-xl text-black m-0">{option.title}</h3>
-              <div className="text-[rgba(0,0,0,0.75)] font-lato text-base leading-relaxed">
-                {option.lines.map((line) => (
-                  <p key={line} className="m-0">
-                    {line}
-                  </p>
-                ))}
+              <div
+                className="w-[64px] h-[64px] rounded-full flex items-center justify-center"
+                style={{ backgroundColor: option.tint }}
+              >
+                <Image src={option.icon} alt={`${option.title} icon`} width={28} height={28} />
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-lato font-bold text-xl text-black m-0">{option.title}</h3>
+                <div className="text-[rgba(0,0,0,0.75)] font-lato text-base leading-relaxed">
+                  {option.lines.map((line) => (
+                    <p key={line} className="m-0">
+                      {line}
+                    </p>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default ContactChannels;
 

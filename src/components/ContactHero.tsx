@@ -1,11 +1,14 @@
 'use client';
 
 import Image from 'next/image';
+import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import contactBackground from '../../assets/contact.png';
 import ContactChannels from './ContactChannels';
 import ContactInquiry from './ContactInquiry';
 
 const ContactHero = () => {
+  const heroSection = useScrollAnimation();
+
   const heroBackgroundImage = contactBackground;
   const heroTitle = 'Get In Touch';
   const heroDescription =
@@ -15,7 +18,10 @@ const ContactHero = () => {
 
   return (
     <>
-      <section className="relative w-full min-h-[45vh] sm:min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center overflow-hidden">
+      <section
+        ref={heroSection.ref}
+        className={`relative w-full min-h-[45vh] sm:min-h-[50vh] md:min-h-[55vh] lg:min-h-[60vh] flex items-center justify-center overflow-hidden scroll-animate ${heroSection.isVisible ? 'visible' : ''}`}
+      >
         <div className="absolute inset-0 z-0 left-0 right-0 w-full" aria-hidden="true">
           <div
             className="absolute inset-0"
