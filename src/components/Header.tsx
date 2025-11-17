@@ -17,7 +17,7 @@ const Header = ({ hideGetStarted = false }: HeaderProps) => {
     { name: 'About Us', path: '/about-us' },
     { name: 'Services', path: '/services' },
     { name: 'Process', path: '/process' },
-    { name: 'Contact', path: '/#contact' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
