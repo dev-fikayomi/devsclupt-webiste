@@ -64,6 +64,7 @@ const Processes = () => {
   const processesSection = useScrollAnimation();
 
   return (
+<<<<<<< HEAD
     <section
       ref={processesSection.ref}
       className={`w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-12 scroll-animate ${
@@ -74,6 +75,13 @@ const Processes = () => {
         <div className="text-center flex flex-col gap-4">
           <h2 className="font-lato font-bold text-4xl md:text-5xl lg:text-[65px] text-black m-0">
             How We Work
+=======
+    <section id="process" className="w-full bg-white py-12 md:py-16 lg:py-20 px-4 md:px-6 lg:px-8">
+      <div className="max-w-[1728px] mx-auto flex flex-col gap-8 md:gap-12 lg:gap-16">
+        <div className="text-center">
+          <h2 className="font-lato font-bold text-4xl md:text-5xl lg:text-[65px] leading-tight text-[#1316b8] m-0">
+            Our Processes
+>>>>>>> 41df19c (Remove IMAGE_MIGRATION_GUIDE.md and several unused assets; update README for project clarity. Add new routes and improve component structure with IDs for better accessibility. Fix typos in Footer and Contact components, and enhance CSS styles for responsiveness.)
           </h2>
           <p className="font-lato font-normal text-base sm:text-lg md:text-xl lg:text-[24px] leading-[1.46] text-[rgba(0,0,0,0.75)] max-w-[900px] mx-auto m-0">
             Our structured approach combines agile methodologies with proven project management practices to deliver exceptional results
