@@ -12,7 +12,6 @@ export const useScrollAnimation = () => {
         if (entry.isIntersecting) {
           setIsVisible(true);
         } else {
-          // Reset visibility when element leaves viewport
           setIsVisible(false);
         }
       },
@@ -24,12 +23,10 @@ export const useScrollAnimation = () => {
 
     const currentRef = ref.current;
     if (currentRef) {
-      // Check if element is already in view on mount
       const rect = currentRef.getBoundingClientRect();
       const isInView = rect.top < window.innerHeight && rect.bottom > 0;
       
       if (isInView) {
-        // Small delay to ensure smooth animation on page load
         setTimeout(() => {
           setIsVisible(true);
         }, 100);

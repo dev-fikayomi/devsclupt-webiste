@@ -19,8 +19,8 @@ const ProcessDeepDive = () => {
       ],
       image: '/assets/discovery-new.png',
       icon: '/icons/process-1-icon-new.svg',
-      layout: 'left', // text on left, image on right
-      isDiscovery: true, // Special styling for Discovery
+      layout: 'left',
+      isDiscovery: true,
     },
     {
       number: '2',
@@ -34,8 +34,8 @@ const ProcessDeepDive = () => {
       ],
       image: '/assets/planning-new.png',
       icon: '/icons/process-2-icon-new.svg',
-      layout: 'right', // image on left, text on right
-      isPlanning: true, // Special styling for Planning and Design
+      layout: 'right',
+      isPlanning: true,
     },
     {
       number: '3',
@@ -48,8 +48,8 @@ const ProcessDeepDive = () => {
       ],
       image: '/assets/development.png',
       icon: '/icons/process-3-icon.svg',
-      layout: 'left', // text on left, image on right
-      isDevelopment: true, // Special styling for Development
+      layout: 'left',
+      isDevelopment: true,
     },
   ];
 
@@ -71,7 +71,6 @@ const ProcessDeepDive = () => {
         <div className="flex flex-col gap-4 sm:gap-6 md:gap-8 lg:gap-10">
           {phases.map((phase, index) => {
             if (phase.layout === 'right') {
-              // Planning and Design: image on left, text on right
               const isPlanning = phase.isPlanning;
               
               return (
@@ -91,7 +90,6 @@ const ProcessDeepDive = () => {
                     <div className="flex-1 order-1 lg:order-2">
                       {isPlanning ? (
                         <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
-                          {/* Planning and Design heading at the beginning of text */}
                           <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3">
                             <div className="relative w-[35px] sm:w-[42px] md:w-[48px] h-[35px] sm:h-[42px] md:h-[48px] flex-shrink-0">
                               <Image 
@@ -109,7 +107,6 @@ const ProcessDeepDive = () => {
                               {phase.title}
                             </h3>
                           </div>
-                          {/* Text content */}
                           <div className="font-lato font-medium text-xs sm:text-sm md:text-base lg:text-lg leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-black">
                             <p className="mb-0">{phase.description}</p>
                             {(phase as any).subDescription && (
@@ -151,7 +148,6 @@ const ProcessDeepDive = () => {
                 </div>
               );
             } else {
-              // Discovery and Development: text on left, image on right
               const isDiscovery = phase.isDiscovery;
               
               return (
@@ -177,7 +173,6 @@ const ProcessDeepDive = () => {
                     <div className="flex-1 order-1 lg:order-1">
                       {isDiscovery ? (
                         <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
-                          {/* Discovery heading aligned with image */}
                           <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mt-1.5 sm:mt-2 md:mt-3">
                             <div className="relative w-[35px] sm:w-[42px] md:w-[48px] h-[35px] sm:h-[42px] md:h-[48px] flex-shrink-0">
                               <Image 
@@ -195,7 +190,6 @@ const ProcessDeepDive = () => {
                               {phase.title}
                             </h3>
                           </div>
-                          {/* Text content */}
                           <div className="font-lato font-medium text-xs sm:text-sm md:text-base lg:text-lg leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-black">
                             <p className="mb-0">{phase.description}</p>
                             <p className="mb-0">{phase.subDescription}</p>
@@ -210,7 +204,6 @@ const ProcessDeepDive = () => {
                         </div>
                       ) : (phase as any).isDevelopment ? (
                         <div className="flex flex-col gap-3 sm:gap-4 md:gap-5">
-                          {/* Development heading aligned with image */}
                           <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 mt-1.5 sm:mt-2 md:mt-3">
                             <div className="relative w-[35px] sm:w-[42px] md:w-[48px] h-[35px] sm:h-[42px] md:h-[48px] flex-shrink-0">
                               <Image 
@@ -228,7 +221,6 @@ const ProcessDeepDive = () => {
                               {phase.title}
                             </h3>
                           </div>
-                          {/* Text content */}
                           <div className="font-lato font-medium text-xs sm:text-sm md:text-base lg:text-lg leading-[1.5] sm:leading-[1.6] md:leading-[1.7] text-black">
                             <p className="mb-0">{phase.description}</p>
                             <ul className="list-disc ml-4 sm:ml-5 md:ml-6 mt-2 sm:mt-3 mb-0">
